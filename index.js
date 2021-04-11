@@ -10,15 +10,19 @@ const slack_client_id = process.env.SLACK_CLIENT_ID;
 const slack_client_secret = process.env.SLACK_CLIENT_SECRET;
 
 app
-    // .use(express.static(path.join(__dirname, 'public')))
+    .use(express.static(path.join(__dirname, 'public')))
     .set('views', path.join(__dirname, 'views'))
     .set('view engine', 'pug')
 
 
-app.get('/', (req, res) => {
-    res.render('index', {title: 'gokigen-appeal'})
-})
+app
+    .get('/', (req, res) => {
+        res.render('index', { title: 'gokigen-appeal' })
+    })
+    .get('/test', (req, res) => {
+        res.render('test', { title: 'test page' })
+    })
 
 app.listen(PORT, () => {
-    console.log(`Listening on ${ PORT }`)
+    console.log(`Listening on ${PORT}`)
 });

@@ -3,5 +3,27 @@ html(lang="ja")
     head
         include head.pug
     body
-        h1 Test for creating page
-        p ... and using pug
+        header
+            h1 GOKIGEN appeal
+                br.wide-none
+                span for Slack
+            p
+                | あなたの今のご機嫌レベルを、
+                br.wide-none
+                | Slackのstatus emojiで
+                br.narrow-show
+                | 表現できます。
+        main 
+            h2 今のご機嫌レベルは……
+                span Your current GOKIGEN level is ...
+            .wrapper--button
+                button(onclick="location.href='./test'" style="background-color: #BC4749;").mdl-button.mdl-js-button.mdl-button--raised.mdl-button--colored.mdl-js-ripple-effect
+                 | &#x1f929; めっちゃ元気 &#x1f929;
+                button(onclick="location.href=''" style="background-color: #EA9010;").mdl-button.mdl-js-button.mdl-button--raised.mdl-button--colored.mdl-js-ripple-effect
+                 | &#x1f60a; かなり元気 &#x1f60a;
+                button(onclick="location.href=''" style="background-color: #E6EED6;").mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect
+                 | &#x1f642; ふつう &#x1f642;
+                button(onclick="location.href=''" style="background-color: #0B6E4F;").mdl-button.mdl-js-button.mdl-button--raised.mdl-button--colored.mdl-js-ripple-effect
+                 | &#x1f611; 元気ない &#x1f611;
+                button(onclick="location.href=''" style="background-color: #2B4162;").mdl-button.mdl-js-button.mdl-button--raised.mdl-button--colored.mdl-js-ripple-effect
+                 | &#x1f627; だめです &#x1f627;
