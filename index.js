@@ -4,12 +4,13 @@ const request = require('request')
 const express = require('express');
 const path = require('path')
 const app = express();
+const PORT = process.env.PORT || 3000
 
 const slack_client_id = process.env.SLACK_CLIENT_ID;
 const slack_client_secret = process.env.SLACK_CLIENT_SECRET;
 
 app
-    .use(express.static(path.join(__dirname, 'public')))
+    // .use(express.static(path.join(__dirname, 'public')))
     .set('views', path.join(__dirname, 'views'))
     .set('view engine', 'pug')
 
@@ -17,3 +18,7 @@ app
 app.get('/', (req, res) => {
     res.render('index', {title: 'gokigen-appeal'})
 })
+
+app.listen(PORT, () => {
+    console.log(`Listening on ${ PORT }`)
+});
