@@ -1,0 +1,41 @@
+doctype html
+case level 
+    when 5
+        - var emoji = "&#x1f929;"
+        - var button_color = "#BC4749"
+    when 4
+        - var emoji = "&#x1f60a;"
+        - var button_color = "#EA9010"
+    when 3
+        - var emoji = "&#x1f642;"
+        - var button_color = "#E6EED6"
+    when 2
+        - var emoji = "&#x1f611;"
+        - var button_color = "#0B6E4F"
+    when 1
+        - var emoji = "&#x1f627;"
+        - var button_color = "#2B4162"
+- var button_bg = "background-color: " + button_color
+html(lang="ja")
+    head
+        include head.pug
+        title !{emoji} Successfully Expressed!
+    body
+        header
+            h1 Successfully Expressed!
+        main 
+            case level 
+                when 2
+                    p おいしいものでもたべてね……
+                when 1
+                    p むりしないでね……
+            #spin_emoji !{emoji}
+            .wrapper--button--result
+                button(onclick="location.href='slack://open'", target="_blank", style=button_bg, class=level!=3?'mdl-button--colored':'').mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect
+                 | Slackで確認する
+                button(onclick="location.href='/'").mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect
+                 | 気が変わった！
+        footer
+            p TwitterにもGOKIGENをappealする
+            a.twitter-share-button(href="https://twitter.com/share?ref_src=twsrc%5Etfw", data-size="normal", data-text="GOKIGEN appeal for Slack", data-url="https://gokigen-appeal.herokuapp.com/", data-hashtags="GOKIGEN_appeal", data-show-count="false") Tweet
+            script(async, src="https://platform.twitter.com/widgets.js", charset="utf-8")

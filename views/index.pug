@@ -2,6 +2,7 @@ doctype html
 html(lang="ja")
     head
         include head.pug
+        title= title
     body
         header
             h1 GOKIGEN appeal
@@ -15,15 +16,19 @@ html(lang="ja")
                 | 表現できます。
         main 
             h2 今のご機嫌レベルは……
-                span Your current GOKIGEN level is ...
+                span Your current GOKIGEN(mood) is ...
             .wrapper--button
-                button(onclick="location.href='./test'" style="background-color: #BC4749;").mdl-button.mdl-js-button.mdl-button--raised.mdl-button--colored.mdl-js-ripple-effect
+                button(onclick="location.href='https://slack.com/oauth/authorize?client_id=1963486779136.1939901061763&scope=identify&redirect_uri=https://gokigen-appeal.herokuapp.com/GOKIGEN-level5'" style="background-color: #BC4749;").mdl-button.mdl-js-button.mdl-button--raised.mdl-button--colored.mdl-js-ripple-effect
                  | &#x1f929; めっちゃ元気 &#x1f929;
-                button(onclick="location.href=''" style="background-color: #EA9010;").mdl-button.mdl-js-button.mdl-button--raised.mdl-button--colored.mdl-js-ripple-effect
+                button(onclick="location.href='https://slack.com/oauth/authorize?client_id=1963486779136.1939901061763&scope=identify&redirect_uri=https://gokigen-appeal.herokuapp.com/GOKIGEN-level4'" style="background-color: #EA9010;").mdl-button.mdl-js-button.mdl-button--raised.mdl-button--colored.mdl-js-ripple-effect
                  | &#x1f60a; かなり元気 &#x1f60a;
-                button(onclick="location.href=''" style="background-color: #E6EED6;").mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect
+                button(onclick="location.href='https://slack.com/oauth/authorize?client_id=1963486779136.1939901061763&scope=identify&redirect_uri=https://gokigen-appeal.herokuapp.com/GOKIGEN-level3'" style="background-color: #E6EED6;").mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect
                  | &#x1f642; ふつう &#x1f642;
-                button(onclick="location.href=''" style="background-color: #0B6E4F;").mdl-button.mdl-js-button.mdl-button--raised.mdl-button--colored.mdl-js-ripple-effect
+                button(onclick="location.href='https://slack.com/oauth/authorize?client_id=1963486779136.1939901061763&scope=identify&redirect_uri=https://gokigen-appeal.herokuapp.com/GOKIGEN-level2'" style="background-color: #0B6E4F;").mdl-button.mdl-js-button.mdl-button--raised.mdl-button--colored.mdl-js-ripple-effect
                  | &#x1f611; 元気ない &#x1f611;
-                button(onclick="location.href=''" style="background-color: #2B4162;").mdl-button.mdl-js-button.mdl-button--raised.mdl-button--colored.mdl-js-ripple-effect
+                button(onclick="location.href='https://slack.com/oauth/authorize?client_id=1963486779136.1939901061763&scope=identify&redirect_uri=https://gokigen-appeal.herokuapp.com/GOKIGEN-level1'" style="background-color: #2B4162;").mdl-button.mdl-js-button.mdl-button--raised.mdl-button--colored.mdl-js-ripple-effect
                  | &#x1f627; だめです &#x1f627;
+        footer
+            p TwitterにもGOKIGENをappealする
+            a.twitter-share-button(href="https://twitter.com/share?ref_src=twsrc%5Etfw", data-size="normal", data-text="GOKIGEN appeal for Slack", data-url="https://gokigen-appeal.herokuapp.com/", data-hashtags="GOKIGEN_appeal", data-show-count="false") Tweet
+            script(async, src="https://platform.twitter.com/widgets.js", charset="utf-8")
