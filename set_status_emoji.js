@@ -10,7 +10,7 @@ const emoji_list = [
 module.exports = (req, level, redirect_uri) => {
     const code = req.query["code"];
     request({
-        url: "https://slack.com/api/oauth.access",
+        url: "https://slack.com/api/oauth.v2.access",
         method: "POST",
         form: {
             client_id: process.env.SLACK_CLIENT_ID,
